@@ -25,6 +25,8 @@ def main():
         channels = [discord_client.get_channel(
             channel_id) for channel_id in utils.channel_ids]
 
+        # Runs the code at startup
+        await check_mod_list(channels)
         # Creates an asynchronous scheduler
         scheduler = AsyncIOScheduler()
         # [] in the third parameter is used to pass in parameters to the callable function
