@@ -48,7 +48,7 @@ async def check_mod_list(channels):
     previous_mods = [reddit.redditor(mod) for mod in fetch_mods_db()]
 
     # Bot accounts that are moderators at r/Animemes
-    banned_mods = ['AnimemesBot', 'AnimemesMod', 'SachiMod']
+    banned_mods = ['AnimemesBot', 'AnimemesMod', 'SachiMod', 'NebraskaLewis']
     current_mods = reddit.subreddit('animemes').moderator()
     current_mods = [mod for mod in current_mods if mod.name not in banned_mods]
 
