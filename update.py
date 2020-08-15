@@ -69,7 +69,11 @@ async def check_mod_list(channels):
     delete_mods_db(removed_mods)
     for mod in removed_mods:
         mod_account = reddit.redditor(mod.name)
-        mod_account.unfriend()
+
+        try:
+            mod_account.unfriend()
+        except:
+            print("You are not friends with {}".format(mod.name))
         message = '{} has been removed as a moderator'.format(mod)
         for channel in channels:
             await channel.send(message)
