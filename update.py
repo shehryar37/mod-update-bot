@@ -16,7 +16,7 @@ import utils
 import psycopg2
 
 
-async def main():
+def main():
     discord_client = commands.Bot(command_prefix='.')
 
     @discord_client.event
@@ -36,7 +36,7 @@ async def main():
     print("Accessed Discord from update.py")
     discord_client.run(os.environ["CLIENT_TOKEN"])
 
-    await discord_client.logout()
+    discord_client.logout()
     exit(1000)
 
 
