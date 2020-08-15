@@ -68,7 +68,7 @@ async def check_mod_list(channels):
     # Deletes the moderators from the database
     delete_mods_db(removed_mods)
     for mod in removed_mods:
-        mod_account = reddit.redditor(mod)
+        mod_account = reddit.redditor(mod.name)
         mod_account.unfriend()
         message = '{} has been removed as a moderator'.format(mod)
         for channel in channels:
