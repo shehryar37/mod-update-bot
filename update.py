@@ -30,7 +30,7 @@ def main():
         # Creates an asynchronous scheduler
         scheduler = AsyncIOScheduler()
         # [] in the third parameter is used to pass in parameters to the callable function
-        scheduler.add_job(check_mod_list, 'interval', [channels], hours=1)
+        scheduler.add_job(check_mod_list, 'interval', [channels], hours=6)
         scheduler.start()
 
     print("Accessed Discord from update.py")
