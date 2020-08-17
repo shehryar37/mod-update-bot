@@ -60,7 +60,7 @@ async def check_mod_list(channels):
     for mod in added_mods:
         mod_account = reddit.redditor(mod.name)
         mod_account.friend()
-        message = '{} has been added as a moderator'.format(mod)
+        message = '@everyone u/{} has been added as a moderator'.format(mod)
         for channel in channels:
             await channel.send(message)
         print(message)
@@ -74,7 +74,7 @@ async def check_mod_list(channels):
             mod_account.unfriend()
         except:
             print("You are not friends with {}".format(mod.name))
-        message = '{} has been removed as a moderator'.format(mod)
+        message = '@everyone u/{} has been removed as a moderator'.format(mod)
         for channel in channels:
             await channel.send(message)
         print(message)
