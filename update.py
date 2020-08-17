@@ -3,7 +3,7 @@ import os
 
 # Scheduling libraries
 import asyncio
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 # Discord API Libraries
 import discord
@@ -28,7 +28,7 @@ def main():
         # Runs the code at startup
         await check_mod_list(channels)
         # Creates an asynchronous scheduler
-        scheduler = AsyncIOScheduler()
+        scheduler = BlockingScheduler()
         # [] in the third parameter is used to pass in parameters to the callable function
         scheduler.add_job(check_mod_list, 'interval', [channels], hours=6)
         scheduler.start()
