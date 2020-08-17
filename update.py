@@ -36,7 +36,6 @@ def main():
     print("Accessed Discord from update.py")
     discord_client.run(os.environ["CLIENT_TOKEN"])
 
-    discord_client.logout()
     exit(1000)
 
 
